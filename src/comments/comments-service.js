@@ -24,8 +24,14 @@ const CommentsService = {
     deleteComment(knex, id) {
         return knex('blogful_comments')
             .where({ id })
-            .update(newCommentFields)
+            .delete()
     },
+
+    updateComment(knex, id, newCommentFields) {
+        return knex('blogful_comments')
+            .where({ id })
+            .update(newCommentFields)
+    }
 }
 
 module.exports = CommentsService;
