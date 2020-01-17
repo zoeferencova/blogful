@@ -10,7 +10,7 @@ const serializeUser = user => ({
     id: user.id,
     fullname: xss(user.fullname),
     username: xss(user.username),
-    nickname: xss(user.nickame),
+    nickname: xss(user.nickname),
     date_created: user.date_created,
 });
 
@@ -85,7 +85,7 @@ usersRouter
     })
     .patch(jsonParser, (req, res, next) => {
         const { fullname, username, password, nickname } = req.body;
-        const userToUpdated = { fullname, username, password, nickname }
+        const userToUpdate = { fullname, username, password, nickname }
 
         const numberOfValues = Object.values(userToUpdate).filter(Boolean).length;
         if (numberOfValues === 0) {
