@@ -185,7 +185,7 @@ describe(`POST /api/articles`, () => {
 
 })
 
-describe.only(`PATCH /api/articles/:article_id`, () => {
+describe(`PATCH /api/articles/:article_id`, () => {
   context(`Given no articles`, () => {
     it(`responds with 404`, () => {
       const articleId = 123456;
